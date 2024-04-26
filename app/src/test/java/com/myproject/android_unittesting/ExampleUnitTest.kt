@@ -21,8 +21,14 @@ class ExampleUnitTest {
 
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun print_simple_suspend_fun() {
+        //we can use runBlocking here but it is not good approach as this function has delay.
+        //so we have to wait until delay finishes. Other option is to use `runTest`
+        runTest {
+            util.simpleSuspendFunc()
+        }
 
     }
 
