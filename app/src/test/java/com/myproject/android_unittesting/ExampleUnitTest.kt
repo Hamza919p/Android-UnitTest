@@ -24,10 +24,15 @@ class ExampleUnitTest {
 
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun print_simple_suspend_fun() {
         val util = Util(unitTest.standardDispatcher)
-        util.makeTestWatcherClass()
+        runTest {
+            util.makeTestWatcherClass()
+            unitTest.standardDispatcher.scheduler.advanceUntilIdle()
+            assertEquals(true, util.check)
+        }
     }
 
     @After
