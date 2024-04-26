@@ -5,6 +5,7 @@
 2. **When we add GlobalScope.launch(Dispatcher.Any)
    in code, then that code runs on provided thread pool.
    Test cases donot run on a thread. How to achieve this**                ==> Use StandardThreadDispatcher() object
+                                                                          ==> We can use constructor injection
                                                                           ==> Dispatchers.setMain(stdObj)     Now on this any thread pool can run 
 3. **Do we need to add StandardThreadDispatcher for every class?**        ==> No, You can create a class, extend it with TestWatcher() class and implement its two methods
                                                                           starting,finish. Create and destroy object in these. Access stdObj from this class
