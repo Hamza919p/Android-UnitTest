@@ -15,7 +15,7 @@ import org.junit.Before
  */
 class ExampleUnitTest {
 
-    val util = Util()
+    val unitTest = UtilTest()
     @Before
     fun start() {
 
@@ -23,7 +23,8 @@ class ExampleUnitTest {
 
     @Test
     fun print_simple_suspend_fun() {
-
+        val util = Util(unitTest.standardDispatcher)
+        util.makeTestWatcherClass()
     }
 
     @After
