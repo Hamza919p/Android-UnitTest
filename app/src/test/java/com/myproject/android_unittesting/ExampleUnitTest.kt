@@ -7,6 +7,7 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Rule
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -15,6 +16,8 @@ import org.junit.Before
  */
 class ExampleUnitTest {
 
+    //we will access this via rule
+    @get:Rule
     val unitTest = UtilTest()
     @Before
     fun start() {
